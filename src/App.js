@@ -1,8 +1,12 @@
 
+// Learn JSX & Details
+
+import Hello from "./components/Hello";
+
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Hello/>
     </>
   );
 }
