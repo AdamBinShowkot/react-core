@@ -1,3 +1,7 @@
+/*****  React Component & Props ****/
+
+
+
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';
 // import './index.css';
@@ -20,12 +24,43 @@ import React from 'react';
 import ReactDOM  from 'react-dom';
 
 
+// function Clock({locale}){
+//   return(
+//     <h1 className='heading'>
+//       <span>
+//         Hello {new Date().toLocaleTimeString(locale)}
+//       </span>
+//     </h1>
+//   )
+// }
 
-setInterval(()=>{
-  const element=(
-    <h1 className='heading'>
-      <span>Hello {new Date().toLocaleTimeString()}</span>
-    </h1>
-  )
-  ReactDOM.render(element,document.getElementById('root'));
-},1000);
+class Clock{
+  print(){
+    return(
+      <h1 className='heading'>
+        <span>
+          Hello {new Date().toLocaleTimeString()}
+        </span>
+      </h1>
+    )
+  }
+}
+
+class Clocks extends React.Component{
+  render(){
+    return(
+      <h1 className='heading'>
+        <span>
+          Hello - {this.props.children} {new Date().toLocaleTimeString(this.props.locale)}
+        </span>
+      </h1>
+    )
+  }
+}
+
+// ReactDOM.render(<Clock locale="bn-BD"/>,document.getElementById('root'));
+// const ClockComponent=new Clock();
+// ReactDOM.render(ClockComponent.print(),document.getElementById('root'));
+ReactDOM.render(<Clocks locale='bn-BD'>
+  Test
+</Clocks>,document.getElementById('root'));
