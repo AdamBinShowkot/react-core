@@ -1,12 +1,10 @@
-
-// Learn JSX & Details
-
-import Hello from "./components/Hello";
+import Clock from "./components/Clock";
 
 function App() {
+  console.log("App Component rendered");
   return (
     <>
-      <Hello/>
+      <Clock/>
     </>
   );
 }
