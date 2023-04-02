@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Conditionallabel from './ConditionalLabel';
 
 
 class Clock extends React.Component{
@@ -11,21 +12,20 @@ class Clock extends React.Component{
     componentDidMount=()=>{
         this.clockTimer=setInterval(()=>this.tick(),1000);
     }
-    handleChangeLocale=(locale)=>{
-        // this.setState((state)=>{
-        //     if(state.locale==="bn-BD"){
-        //         return{
-        //             ...state,
-        //             locale:'en-US'
-        //         }
-        //     }else{
-        //         return{
-        //             ...state,
-        //             locale:'bn-BD'
-        //         }
-        //     }
-        // })
-        this.setState({locale})
+    handleChangeLocale=()=>{
+        this.setState((state)=>{
+            if(state.locale==="bn-BD"){
+                return{
+                    ...state,
+                    locale:'en-US'
+                }
+            }else{
+                return{
+                    ...state,
+                    locale:'bn-BD'
+                }
+            }
+        })
     }
     tick=()=>{
         this.setState({
@@ -38,10 +38,10 @@ class Clock extends React.Component{
     }
 
     render(){
-        console.log("Clock Component Rendered");
+
         return(
             <>
-                <div>
+                <div style={{padding:"10px"}}>
                     <h1 className='heading'>
                         <span>
                             {
@@ -51,7 +51,8 @@ class Clock extends React.Component{
                     </h1>
                     <Button handleLocale={this.handleChangeLocale} locale='en-US'>
                         Change Locale
-                    </Button>
+                    </Button><br/>
+                    <Conditionallabel isShow={false} />
                 </div>
             </>
         )

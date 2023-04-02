@@ -14,7 +14,7 @@ class Button extends React.Component{
         console.log('Button Component Rendered');
         const {locale,handleLocale,children}=this.props
         return(
-            <button onClick={()=>handleLocale(locale)}>
+            <button onClick={()=>handleLocale()}>
                 {children}
             </button>
         )

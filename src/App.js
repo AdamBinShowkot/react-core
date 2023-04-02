@@ -1,10 +1,14 @@
 import Clock from "./components/Clock";
 
 function App() {
-  console.log("App Component rendered");
+  const myArr=[1,2,3,4];
   return (
     <>
-      <Clock/>
+      {
+        myArr.length?myArr.map((data)=>{
+          return <Clock key={data}/>
+        }):""
+      }
     </>
   );
 }
