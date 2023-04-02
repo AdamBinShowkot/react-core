@@ -1,14 +1,11 @@
-import Clock from "./components/Clock";
+
+import FormHandling from "./components/Form";
+
 
 function App() {
-  const myArr=[1,2,3,4];
   return (
     <>
-      {
-        myArr.length?myArr.map((data)=>{
-          return <Clock key={data}/>
-        }):""
-      }
+      <FormHandling/>
     </>
   );
 }
